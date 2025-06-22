@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
@@ -5,8 +6,7 @@ import { auth, googleProvider, githubProvider } from '../firebase';
 import googleIcon from '../assets/google.png';
 import githubIcon from '../assets/github.png';
 import '../css/Login.css';
-import logo from '../assets/logo.png';
-
+import logo from '../assets/logo.png'; // Assuming you have a logo image
 const Login = ({ onClose, onOpenRegister }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -14,20 +14,31 @@ const Login = ({ onClose, onOpenRegister }) => {
   const navigate = useNavigate();
 
   const validateForm = () => {
-    if (!email || !password) return 'All fields are required';
-    if (!/^\S+@\S+\.\S+$/.test(email)) return 'Invalid email format';
+    console.log('Validating form with:', { email, password });
+    if (!email || !password) {
+      console.log('Validation failed: All fields are required');
+      return 'All fields are required';
+    }
+    if (!/^\S+@\S+\.\S+$/.test(email)) {
+      console.log('Validation failed: Invalid email format');
+      return 'Invalid email format';
+    }
     return '';
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('Login form submitted with:', { email, password });
     const validationError = validateForm();
     if (validationError) {
+      console.log('Login validation error:', validationError);
       setError(validationError);
       return;
     }
     try {
+      console.log('Sending login request to http://localhost:3000/api/auth/login');
       const response = await axios.post('http://localhost:3000/api/auth/login', { email, password }, { timeout: 10000 });
+      console.log('Login response received:', response.data);
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('role', response.data.role);
       setError('Login successful! Redirecting...');
@@ -36,16 +47,23 @@ const Login = ({ onClose, onOpenRegister }) => {
         navigate('/user-dashboard');
       }, 1000);
     } catch (err) {
-      console.error('Login Error:', err.response?.data || err.message);
+      console.error('Login Error Details:', {
+        message: err.message,
+        response: err.response?.data,
+        status: err.response?.status,
+      });
       setError(err.response?.data?.message || 'Login failed. Please try again.');
     }
   };
 
   const handleGoogleLogin = async () => {
     try {
+      console.log('Initiating Google login');
       const result = await signInWithPopup(auth, googleProvider);
       const token = result.user.accessToken;
+      console.log('Google login token obtained:', token);
       const response = await axios.post('http://localhost:3000/api/auth/google', { token });
+      console.log('Google login response:', response.data);
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('role', response.data.role);
       setError('Login successful with Google! Redirecting...');
@@ -54,16 +72,22 @@ const Login = ({ onClose, onOpenRegister }) => {
         navigate('/user-dashboard');
       }, 1000);
     } catch (err) {
-      console.error('Google Login Error:', err.message);
+      console.error('Google Login Error:', {
+        message: err.message,
+        code: err.code,
+      });
       setError('Google login failed. Please try again.');
     }
   };
 
   const handleGithubLogin = async () => {
     try {
+      console.log('Initiating GitHub login');
       const result = await signInWithPopup(auth, githubProvider);
       const token = result.user.accessToken;
+      console.log('GitHub login token obtained:', token);
       const response = await axios.post('http://localhost:3000/api/auth/github', { token });
+      console.log('GitHub login response:', response.data);
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('role', response.data.role);
       setError('Login successful with GitHub! Redirecting...');
@@ -72,7 +96,10 @@ const Login = ({ onClose, onOpenRegister }) => {
         navigate('/user-dashboard');
       }, 1000);
     } catch (err) {
-      console.error('GitHub Login Error:', err.message);
+      console.error('GitHub Login Error:', {
+        message: err.message,
+        code: err.code,
+      });
       setError('GitHub login failed. Please try again.');
     }
   };
@@ -80,7 +107,7 @@ const Login = ({ onClose, onOpenRegister }) => {
   return (
     <div className="login-card">
       <img src={logo} alt="Filmophobia Logo" className="login-logo" />
-      <h2>Sign In to Filmophobia</h2>
+      <h2 className="login-title">Sign In to Filmophobia</h2>
       {error && <div className="error-message">{error}</div>}
       <form className="login-form" onSubmit={handleSubmit}>
         <div className="form-group">

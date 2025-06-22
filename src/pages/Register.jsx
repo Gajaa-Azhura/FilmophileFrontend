@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import '../css/Register.css';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.png'; // Assuming you have a logo image
+
 const Register = ({ onClose, onOpenLogin }) => {
   const [formData, setFormData] = useState({ name: '', email: '', password: '' });
   const [error, setError] = useState('');
@@ -14,23 +15,32 @@ const Register = ({ onClose, onOpenLogin }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('Registration form submitted with:', formData);
     if (!formData.name || !formData.email || !formData.password) {
+      console.log('Registration validation failed: All fields are required');
       setError('All fields are required');
       return;
     }
     if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+      console.log('Registration validation failed: Invalid email format');
       setError('Invalid email format');
       return;
     }
     try {
+      console.log('Sending registration request to http://localhost:3000/api/auth/register');
       const response = await axios.post('http://localhost:3000/api/auth/register', formData, { timeout: 10000 });
+      console.log('Registration response received:', response.data);
       setError('Registration successful! Redirecting to login...');
       setTimeout(() => {
         onClose();
-        navigate('/login'); // This will now open the login modal via Navbar state
+        navigate('/login');
       }, 1000);
     } catch (err) {
-      console.error('Register Error:', err.response?.data || err.message);
+      console.error('Registration Error Details:', {
+        message: err.message,
+        response: err.response?.data,
+        status: err.response?.status,
+      });
       setError(err.response?.data?.message || 'Registration failed. Please try again.');
     }
   };
