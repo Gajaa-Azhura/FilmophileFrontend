@@ -1,0 +1,161 @@
+.about {
+  background-color: #1B1B1B;
+  min-height: 100vh;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+.about-content {
+  padding: 2.5rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-content h1 {
+  color: #E0CD67;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.about-content h2 {
+  color: #E0CD67;
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.about-content h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: #E0CD67;
+  margin: 0.5rem auto;
+  transition: width 0.3s ease;
+}
+
+.about-content h2:hover::after {
+  width: 100px;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  color: #cccccc;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.about-content a.cta-link {
+  color: #E0CD67;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.about-content a.cta-link:hover {
+  color: #d3c05a;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.timeline-item {
+  background-color: #2a2a2a;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.timeline-item h3 {
+  color: #E0CD67;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-item p {
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.features-list li {
+  font-size: 1rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.features-list li span {
+  color: #E0CD67;
+  font-weight: 600;
+}
+
+.features-list li::before {
+  content: '🎬';
+  position: absolute;
+  left: 0;
+  color: #E0CD67;
+}
+
+.testimonials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.testimonial-item {
+  background-color: #2a2a2a;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  flex: 1;
+  min-width: 250px;
+}
+
+.testimonial-item p {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-item span {
+  font-size: 0.9rem;
+  color: #cccccc;
+  display: block;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    padding: 1.5rem 1rem;
+  }
+  .about-content h1 {
+    font-size: 2rem;
+  }
+  .about-content h2 {
+    font-size: 1.5rem;
+  }
+  .about-content p {
+    font-size: 1rem;
+  }
+  .timeline-item {
+    padding: 0.8rem;
+  }
+  .testimonial-item {
+    min-width: 100%;
+  }
+}
