@@ -21,7 +21,7 @@ const ArtProviderDashboard = () => {
 
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:3000/api/films', formData, {
+      await axios.post('http://localhost:5000/api/films', formData, {
         headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'multipart/form-data' },
       });
       setTitle('');
@@ -46,7 +46,7 @@ const ArtProviderDashboard = () => {
         <h2>Welcome, Art Provider!</h2>
         {error && <p className="error">{error}</p>}
         <div className="dashboard-actions">
-          <button onClick={handleLogout} className="logout-btn">Logout</button>
+          {/* <button onClick={handleLogout} className="logout-btn">Logout</button> */}
         </div>
         <form className="upload-form" onSubmit={handleSubmit}>
           <div className="form-group">

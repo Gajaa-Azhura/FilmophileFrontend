@@ -21,7 +21,7 @@ const UserProfile = () => {
   useEffect(() => {
     // Fetch profile data from API (e.g., /api/user/profile)
     // Replace with actual API call
-    // axios.get('http://localhost:3000/api/user/profile')
+    // axios.get('http://localhost:5000/api/user/profile')
     //   .then(response => setProfileData(response.data))
     //   .catch(error => console.error('Error fetching profile:', error));
   }, []);

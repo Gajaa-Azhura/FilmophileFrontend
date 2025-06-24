@@ -50,7 +50,7 @@ const AdminDashboard = () => {
         <h2>Welcome, Admin!</h2>
         {error && <p className="error">{error}</p>}
         <div className="dashboard-actions">
-          <button onClick={handleLogout} className="logout-btn">Logout</button>
+          {/* <button onClick={handleLogout} className="logout-btn">Logout</button> */}
         </div>
         <table className="user-table">
           <thead>

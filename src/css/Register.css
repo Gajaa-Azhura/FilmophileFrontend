@@ -35,6 +35,12 @@
   font-size: 0.9rem;
   font-weight: 500;
 }
+.success-message {
+  color: #4CAF50; /* Green for success */
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
 
 .register-form {
   display: flex;

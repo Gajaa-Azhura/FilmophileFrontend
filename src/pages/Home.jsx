@@ -37,11 +37,11 @@ const Home = () => {
       <Navbar />
       <main className="home-content">
         <section className="hero">
-          <h1>Welcome to Filmophobia</h1>
+          <h1>Welcome to Filmophile</h1>
           <p>Discover a world of local films and short masterpieces. Explore, watch, and share your cinematic journey.</p>
           {localStorage.getItem('token') && (
             <div className="dashboard-actions">
-              <button onClick={handleLogout} className="logout-btn">Logout</button>
+              {/* <button onClick={handleLogout} className="logout-btn">Logout</button> */}
             </div>
           )}
         </section>

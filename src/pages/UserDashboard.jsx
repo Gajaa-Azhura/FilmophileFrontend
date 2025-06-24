@@ -15,7 +15,7 @@ const UserDashboard = () => {
     const fetchFilms = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:3000/api/films', {
+        const response = await axios.get('http://localhost:5000/api/films', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setFilms(response.data);
@@ -39,7 +39,7 @@ const UserDashboard = () => {
         <h2>Welcome, User!</h2>
         {error && <p className="error">{error}</p>}
         <div className="dashboard-actions">
-          <button onClick={handleLogout} className="logout-btn">Logout</button>
+          {/* <button onClick={handleLogout} className="logout-btn">Logout</button> */}
         </div>
         <div className="film-grid">
           {films.length > 0 ? (
