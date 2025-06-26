@@ -15,7 +15,7 @@ const Home = () => {
     const fetchFeaturedFilms = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:3000/api/films', {
+        const response = await axios.get('http://localhost:5001/api/films', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setFeaturedFilms(response.data);

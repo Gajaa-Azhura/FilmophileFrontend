@@ -8,16 +8,16 @@ const About = () => {
     <div className="about">
       <Navbar />
       <div className="about-content">
-        <h1>About Filmophobia</h1>
+        <h1>About Filmophile</h1>
         <p>
-          Welcome to Filmophobia, the ultimate haven for cinematic enthusiasts. Launched in 2025, our platform is dedicated to bringing the magic of films to your screen with a curated selection of classics, blockbusters, indie gems, and short masterpieces. Our mission is to create a vibrant community where movie lovers can explore, subscribe, and share their cinematic journey with the world.
+          Welcome to Filmophile, the ultimate haven for cinematic enthusiasts. Launched in 2025, our platform is dedicated to bringing the magic of films to your screen with a curated selection of classics, blockbusters, indie gems, and short masterpieces. Our mission is to create a vibrant community where movie lovers can explore, subscribe, and share their cinematic journey with the world.
         </p>
 
         <h2>Our Journey</h2>
         <div className="timeline">
           <div className="timeline-item">
             <h3>2025 - Inception</h3>
-            <p>Filmophobia was born with a vision to revolutionize how we experience local and global cinema.</p>
+            <p>Filmophile was born with a vision to revolutionize how we experience local and global cinema.</p>
           </div>
           <div className="timeline-item">
             <h3>2025 - First Release</h3>
@@ -29,7 +29,7 @@ const About = () => {
           </div>
         </div>
 
-        <h2>Why Choose Filmophobia?</h2>
+        <h2>Why Choose Filmophile?</h2>
         <ul className="features-list">
           <li><span>Curated Collection:</span> Handpicked films from around the globe.</li>
           <li><span>Seamless Subscription:</span> Easy access with flexible plans.</li>

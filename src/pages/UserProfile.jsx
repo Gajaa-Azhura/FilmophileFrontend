@@ -6,7 +6,7 @@ import '../css/UserProfile.css';
 
 const UserProfile = () => {
   const [profileData, setProfileData] = useState({
-    name: 'Priya Sharma',
+    name: '', // this will be updated from localStorage
     bestComments: [
       { film: 'Silent Shadows', comment: 'A masterpiece of storytelling!' },
       { film: 'Echoes of Dawn', comment: 'Beautiful cinematography.' },
@@ -16,18 +16,29 @@ const UserProfile = () => {
       { film: 'Silent Shadows', comment: 'Incredible acting!', upvotes: 10 },
     ],
   });
+
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Fetch profile data from API (e.g., /api/user/profile)
-    // Replace with actual API call
-    // axios.get('http://localhost:5000/api/user/profile')
-    //   .then(response => setProfileData(response.data))
-    //   .catch(error => console.error('Error fetching profile:', error));
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+    if (storedUser?.username) {
+      setProfileData((prev) => ({
+        ...prev,
+        name: storedUser.username, // ✅ dynamically set name
+      }));
+    }
+
+    // Optional: Fetch user profile data from backend if needed
+    // axios.get('http://localhost:5001/api/user/profile', {
+    //   headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+    // })
+    // .then(res => setProfileData(res.data))
+    // .catch(err => console.error('Error fetching profile:', err));
   }, []);
 
   const handleLogout = () => {
     localStorage.removeItem('token');
+    localStorage.removeItem('user');
     localStorage.removeItem('role');
     navigate('/');
   };
@@ -46,14 +57,17 @@ const UserProfile = () => {
               </li>
             ))}
           </ul>
+
           <h2>Top Comments</h2>
           <ul className="comment-list">
             {profileData.topComments.map((comment, index) => (
               <li key={index}>
-                <span className="film-title">{comment.film}:</span> {comment.comment} <span className="upvotes">({comment.upvotes} upvotes)</span>
+                <span className="film-title">{comment.film}:</span> {comment.comment}{' '}
+                <span className="upvotes">({comment.upvotes} upvotes)</span>
               </li>
             ))}
           </ul>
+
           <button className="logout-btn" onClick={handleLogout}>Logout</button>
         </div>
       </div>

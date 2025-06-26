@@ -32,7 +32,7 @@ const Payment = () => {
             return;
           }
 
-          const response = await axios.post('http://localhost:5000/api/payments/create-subscription', {
+          const response = await axios.post('http://localhost:5001/api/payments/create-subscription', {
             paymentMethodId: paymentMethod.id,
             priceId: 'price_1YourPriceIdHere', // Replace with your Stripe price ID
           });

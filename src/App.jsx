@@ -9,7 +9,7 @@
      import ArtProviderProfile from './pages/ArtProviderProfile';
      import UserProfile from './pages/UserProfile';
      import AdminProfile from './pages/AdminProfile';
-
+     import Watch from './pages/Watch'; // Import the Watch page
      function App() {
        return (
          <Router>
@@ -22,8 +22,9 @@
              <Route path="/about" element={<About />} />
              <Route path="/contact" element={<Contact />} />
              <Route path="/art-provider-profile" element={<ArtProviderProfile />} />
-             <Route path="/user-profile" element={<UserProfile />} />
+             <Route path="/profile" element={<UserProfile />} />
              <Route path="/admin-profile" element={<AdminProfile />} />
+             <Route path="/watch" element={<Watch />} /> {/* Add watch route */}
            </Routes>
          </Router>
        );

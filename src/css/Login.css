@@ -36,7 +36,11 @@
   font-size: 0.9rem;
   font-weight: 500;
 }
-
+.success-message {
+  color: green; /* Green for success */
+  margin-bottom: 10px;
+  text-align: center;
+}
 .login-form {
   display: flex;
   flex-direction: column;

@@ -15,7 +15,7 @@ const ArtProviderProfile = () => {
   useEffect(() => {
     // Fetch profile data from API (e.g., /api/art-provider/profile)
     // Replace with actual API call
-    // axios.get('http://localhost:5000/api/art-provider/profile')
+    // axios.get('http://localhost:5001/api/art-provider/profile')
     //   .then(response => setProfileData(response.data))
     //   .catch(error => console.error('Error fetching profile:', error));
   }, []);

@@ -15,7 +15,7 @@ const UserDashboard = () => {
     const fetchFilms = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:5000/api/films', {
+        const response = await axios.get('http://localhost:5001/api/films', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setFilms(response.data);

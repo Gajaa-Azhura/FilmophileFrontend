@@ -21,7 +21,7 @@ const ArtProviderDashboard = () => {
 
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:5000/api/films', formData, {
+      await axios.post('http://localhost:5001/api/films', formData, {
         headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'multipart/form-data' },
       });
       setTitle('');

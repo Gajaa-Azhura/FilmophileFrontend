@@ -15,7 +15,7 @@ const AdminProfile = () => {
   useEffect(() => {
     // Fetch dashboard data from API (e.g., /api/admin/dashboard)
     // Replace with actual API call
-    // axios.get('http://localhost:3000/api/admin/dashboard')
+    // axios.get('http://localhost:5001/api/admin/dashboard')
     //   .then(response => setDashboardData(response.data))
     //   .catch(error => console.error('Error fetching dashboard:', error));
   }, []);
