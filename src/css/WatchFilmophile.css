@@ -1,0 +1,30 @@
+.watch-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.film-list {
+  display: grid;
+  gap: 20px;
+}
+
+.film-item {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.film-item h2 {
+  margin-bottom: 10px;
+}
+
+.film-item p {
+  margin: 5px 0;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+}

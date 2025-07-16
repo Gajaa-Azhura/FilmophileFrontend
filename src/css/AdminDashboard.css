@@ -1,0 +1,136 @@
+.admin-dashboard {
+  background-color: #1B1B1B;
+  min-height: 100vh;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.dashboard-content {
+  padding: 2rem;
+}
+
+.dashboard-content h2.welcome-heading {
+  color: #E0CD67;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.dashboard-content h2.dashboard-heading {
+  color: #E0CD67;
+  text-align: left;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #E0CD67;
+}
+
+.error {
+  color: #ff4d4d;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.dashboard-actions {
+  text-align: right;
+  margin-bottom: 1.5rem;
+}
+
+.logout-btn {
+  background: none;
+  border: 2px solid #E0CD67;
+  color: #E0CD67;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover,
+.logout-btn:focus {
+  background-color: #E0CD67;
+  color: #1B1B1B;
+  outline: none;
+}
+
+.user-table,
+.film-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.user-table th,
+.user-table td,
+.film-table th,
+.film-table td {
+  padding: 1rem;
+  text-align: left;
+}
+
+.user-table th,
+.film-table th {
+  background-color: #3a3a3a;
+}
+
+.user-table tr:nth-child(even),
+.film-table tr:nth-child(even) {
+  background-color: #333333;
+}
+
+.delete-btn {
+  background-color: #ff4d4d;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover,
+.delete-btn:focus {
+  background-color: #e60000;
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .dashboard-content {
+    padding: 1rem;
+  }
+  .user-table {
+    font-size: 0.9rem;
+  }
+  .user-table th,
+  .user-table td {
+    padding: 0.5rem;
+  }
+  .dashboard-actions {
+    text-align: center;
+  }
+}
+  .logout-btn {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+.approved-row {
+  background-color: #d4edda; /* A light green color */
+}
+
+.approve-btn:disabled {
+  background-color:#0a893b;
+  cursor: not-allowed;
+
+}
+
+.approve-btn{
+  background-color: #28a745; /* Green color */
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}

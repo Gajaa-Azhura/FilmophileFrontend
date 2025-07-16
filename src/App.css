@@ -1,0 +1,14 @@
+body {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+a {
+  color: #FFD700;
+  text-decoration: none;
+}
+a:hover, a:focus {
+  text-decoration: underline;
+  outline: none;
+}

@@ -1,0 +1,112 @@
+.user-dashboard {
+  background-color: #1B1B1B;
+  min-height: 100vh;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+.dashboard-content {
+  padding: 2.5rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-content h2 {
+  color: #E0CD67;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.dashboard-content h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: #E0CD67;
+  margin: 0.5rem auto;
+  transition: width 0.3s ease;
+}
+
+.dashboard-content h2:hover::after {
+  width: 100px;
+}
+
+.error {
+  color: #ff4d4d;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  background-color: rgba(255, 77, 77, 0.1);
+}
+
+.dashboard-actions {
+  text-align: right;
+  margin-bottom: 2rem;
+}
+
+.logout-btn {
+  background: none;
+  border: 2px solid #E0CD67;
+  color: #E0CD67;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover,
+.logout-btn:focus {
+  background-color: #E0CD67;
+  color: #1B1B1B;
+  transform: translateY(-2px);
+  outline: none;
+  box-shadow: 0 4px 8px rgba(224, 205, 103, 0.3);
+}
+
+.film-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 0;
+}
+
+.film-grid p {
+  text-align: center;
+  color: #cccccc;
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  .dashboard-content {
+    padding: 1.5rem 1rem;
+  }
+  .dashboard-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .dashboard-content h2::after {
+    width: 30px;
+  }
+  .dashboard-content h2:hover::after {
+    width: 60px;
+  }
+  .film-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .dashboard-actions {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .logout-btn {
+    padding: 0.5rem 1rem;
+  }
+}

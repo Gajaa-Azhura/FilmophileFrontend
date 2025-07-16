@@ -1,0 +1,80 @@
+.profile-page {
+  background-color: #1B1B1B;
+  min-height: 100vh;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.profile-content {
+  padding: 3rem 1.5rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.profile-content h1 {
+  color: #E0CD67;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.profile-card {
+  background-color: #2a2a2a;
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35), 0 1.5px 4px rgba(0,0,0,0.10);
+  max-width: 400px;
+  margin: 0 auto;
+}
+.film-list, .award-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.film-list li, .award-list li {
+  background-color: #3a3a3a;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.film-list li:hover, .award-list li:hover {
+  background-color: #444444;
+}
+
+.logout-btn {
+  width: 100%;
+  padding: 0.9rem;
+  background-color: #ff4444;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.logout-btn:hover {
+  background-color: #cc0000;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .profile-content {
+    padding: 1.5rem 1rem;
+  }
+  .profile-content h1 {
+    font-size: 2rem;
+  }
+  .profile-card {
+    padding: 1.5rem;
+  }
+  .logout-btn {
+    padding: 0.8rem;
+  }
+}

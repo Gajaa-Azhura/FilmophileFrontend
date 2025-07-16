@@ -1,0 +1,33 @@
+.footer {
+  background-color: #1B1B1B;
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid #E0CD67;
+}
+
+.footer p {
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 1rem;
+}
+
+.footer-links a {
+  color: #E0CD67;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+  color: #ffffff;
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

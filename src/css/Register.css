@@ -1,0 +1,139 @@
+.register-card {
+  background-color: #2a2a2a;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1050;
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35), 0 1.5px 4px rgba(0,0,0,0.10);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.register-logo {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1.5rem;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.register-title {
+  color: #E0CD67;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.error-message {
+  color: #ff4444;
+  background-color: rgba(255, 68, 68, 0.1);
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.success-message {
+  color: #4CAF50; /* Green for success */
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  text-align: left;
+}
+
+.form-group label {
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #3a3a3a;
+  background-color: #1B1B1B;
+  color: #ffffff;
+  border-radius: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  
+}
+
+.form-group input:focus {
+  border-color: #E0CD67;
+  outline: none;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.9rem;
+  background-color: #E0CD67;
+  color: #1B1B1B;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+  background-color: #d3c05a;
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.login-link, .already-account {
+  color: #cccccc;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.login-link a, .already-account a {
+  color: #E0CD67;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-link a:hover, .login-link a:focus,
+.already-account a:hover, .already-account a:focus {
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+  .register-card {
+    padding: 1.5rem;
+    margin: 1rem;
+    max-width: 95vw;
+    border-radius: 10px;
+  }
+}
